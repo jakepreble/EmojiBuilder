@@ -9,6 +9,7 @@ public class EmojiBuilder extends NonBlockingGame {
 
     // class (static) variables -- numRows, numCols
     private static int numRows = 10; // change the numRows dimension if you would like
+    private static int numCols = 10;
     //YOUR LINE OF CODE HERE:
 
     // constructor
@@ -19,6 +20,7 @@ public class EmojiBuilder extends NonBlockingGame {
         // Set a description which will show under the title
         setDescription("Give your emoji a description");
         // start method
+        initialize();
         start();
     }
 
@@ -26,7 +28,7 @@ public class EmojiBuilder extends NonBlockingGame {
     public static void main(String args[]) {
         // Create an EmojiBuilder object -- Don't forget to fill in your assignment number, username, and apiKey
         // (numRows and numCols values are passed in from the class variables above)
-        EmojiBuilder emoji = new EmojiBuilder(assignmentNumber, "username", "apiKey", numRows, numCols);
+        EmojiBuilder emoji = new EmojiBuilder(0, "jpreble", "250600616660", numRows, numCols);
     }
 
     // initialize
@@ -34,12 +36,23 @@ public class EmojiBuilder extends NonBlockingGame {
         // Use nested loops to set the background color of your emoji
         // HINT: Remember that getBoardHeight() and getBoardWidth() exist for your use
         // YOUR CODE HERE:
-
+        for(int r = 0; r < getBoardHeight(); r++){
+            for(int c = 0; c < getBoardWidth(); c++){
+                setBGColor(r,c, NamedColor.lightyellow);
+            }
+        }
         // use setBGColor calls for your emoji
         // for example:
-        setBGColor(2,3, NamedColor.darkmagenta);
-        setBGColor(2,5, NamedColor.darkmagenta);
+        //setBGColor(2,3, NamedColor.darkmagenta);
+        //setBGColor(2,5, NamedColor.darkmagenta);
         //YOUR CODE HERE:
+        for(int i = 0; i < 2; i++){
+            for(int j = 0; j < getBoardWidth(); j++){
+                setBGColor(i,j, NamedColor.yellow);
+            }
+        }
+        
+
     }
 
     // gameloop
