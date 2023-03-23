@@ -1,6 +1,7 @@
 // Emoji Builder Scaffold Code
 
 import bridges.games.NonBlockingGame;
+import bridges.base.Color;
 import bridges.base.NamedColor;
 import bridges.base.NamedSymbol;
 
@@ -35,7 +36,7 @@ public class EmojiBuilder extends NonBlockingGame {
     public void initialize() {
         // Use nested loops to set the background color of your emoji
         // HINT: Remember that getBoardHeight() and getBoardWidth() exist for your use
-        // YOUR CODE HERE:
+        // YOUR CODE HERE:+
         for(int r = 0; r < getBoardHeight(); r++){
             for(int c = 0; c < getBoardWidth(); c++){
                 setBGColor(r,c, NamedColor.lightyellow);
@@ -46,12 +47,41 @@ public class EmojiBuilder extends NonBlockingGame {
         //setBGColor(2,3, NamedColor.darkmagenta);
         //setBGColor(2,5, NamedColor.darkmagenta);
         //YOUR CODE HERE:
+        //Fills top of head with hair
         for(int i = 0; i < 2; i++){
             for(int j = 0; j < getBoardWidth(); j++){
-                setBGColor(i,j, NamedColor.yellow);
+                setBGColor(i,j, NamedColor.saddlebrown);
             }
         }
-        
+        //Loop to fill left eyeball 3x3 with white
+        for(int i = 2; i<5; i++){
+            for(int j=1; j<4; j++){
+                setBGColor(i, j, NamedColor.white);
+            }
+        }
+        //loop to fill right eyeball 3x3 with white
+        for(int i = 2; i<5; i++){
+            for(int j=6; j<9; j++){
+                setBGColor(i, j, NamedColor.white);
+            }
+        }
+        //Hair in front of eyes
+        setBGColor(2,0, NamedColor.saddlebrown);
+        setBGColor(2,1, NamedColor.saddlebrown);
+        setBGColor(2,2, NamedColor.saddlebrown);
+        setBGColor(2,3, NamedColor.saddlebrown);
+        //Pupils
+        setBGColor(4, 1, NamedColor.black);
+        setBGColor(2, 8, NamedColor.black);
+        //Teeth
+        setBGColor(6, 4, NamedColor.white);
+        setBGColor(6, 5, NamedColor.white);
+        //Mouth
+        setBGColor(7, 4, NamedColor.black);
+        setBGColor(7, 5, NamedColor.black);
+        //Tongue
+        setBGColor(8, 4, NamedColor.red);
+        setBGColor(8, 5, NamedColor.red);
 
     }
 
